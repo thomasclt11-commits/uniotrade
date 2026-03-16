@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>UNIOTRADE — Importateur Direct Chine · Europe</title>
+<meta name="description" content="Importateur direct certifié entre la Chine et l'Europe. Contrôle qualité A à Z. Livraison dans 27 pays UE. Certifications CE incluses."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════
+   VARIABLES & RESET
+═══════════════════════════════════════════ */
+:root {
+  --navy: #0A1628;
+  --navy2: #0F1E38;
+  --navy3: #162848;
+  --navy4: #1E3A5F;
+  --accent: #C9A84C;
+  --accent2: #E8C97A;
+  --accent-light: rgba(201,168,76,0.12);
+  --white: #FFFFFF;
+  --off: #F8F7F4;
+  --off2: #F0EDE6;
+  --text: #1A1A1A;
+  --muted: #6B7280;
+  --border: #E5E0D8;
+  --border-dark: rgba(255,255,255,0.07);
+  --success: #10B981;
+  --shadow: 0 4px 24px rgba(10,22,40,0.08);
+  --shadow-lg: 0 20px 60px rgba(10,22,40,0.15);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+::selection { background: var(--accent); color: var(--navy); }
+a { text-decoration: none; }
+img { max-width: 100%; }
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 0; }
+
+/* ═══════════════════════════════════════════
+   TOPBAR
+═══════════════════════════════════════════ */
+.topbar {
+  background: var(--navy);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 0.5rem 0;
+}
+.topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.topbar-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform: scale(1); }
+  50% { opacity:0.4; transform: scale(0.7); }
+}
+.topbar span {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.topbar-links a {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.topbar-links a:hover { color: var(--accent); }
+.topbar-links a svg { flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+nav {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 30px rgba(10,22,40,0.1); }
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  position: relative;
+  flex-shrink: 0;
+}
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--accent);
+  transform: translate(3px,3px);
+  pointer-events: none;
+}
+.logo-mark span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.logo-text-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: block;
+}
+.logo-text-sub {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.2rem;
+}
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding-right: 0.9rem;
+  border-right: 1px solid var(--border);
+}
+.lang-btn {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.lang-btn:hover { color: var(--navy); }
+.lang-btn.active {
+  background: var(--navy);
+  color: var(--accent);
+}
+.btn-ghost {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  padding: 0.5rem 1.1rem;
+  border-radius: 2px;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+}
+.btn-ghost:hover { background: var(--navy); color: var(--white); }
+.btn-gold {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--navy);
+  padding: 0.55rem 1.3rem;
+  border-radius: 2px;
+  transition: all 0.2s;
+  letter-spacing: 0.03em;
+}
+.btn-gold:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.3); }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero-bg-glow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%);
+  top: -200px;
+  right: -150px;
+  pointer-events: none;
+}
+.hero-bg-glow2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(30,58,95,0.6) 0%, transparent 70%);
+  bottom: -100px;
+  left: -50px;
+  pointer-events: none;
+}
+/* decorative line */
+.hero-deco-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.15), transparent);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 7rem 2rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+.eyebrow-text {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.01em;
+}
+h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.5);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--navy);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  transition: all 0.25s;
+  letter-spacing: 0.03em;
+}
+.btn-primary:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(201,168,76,0.3);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.5); color: white; }
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+}
+.trust-check {
+  width: 16px;
+  height: 16px;
+  background: rgba(16,185,129,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* HERO CARD */
+.hero-card {
+  background: var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.2);
+}
+.hcard-header {
+  background: var(--navy2);
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-dark);
+}
+.hcard-dots {
+  display: flex;
+  gap: 5px;
+}
+.hcard-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+.hcard-dots span:first-child { background: rgba(201,168,76,0.7); animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+.hcard-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.hcard-body { padding: 1.5rem; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 1.2rem;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.stat-cell {
+  background: var(--off);
+  padding: 1.1rem 1rem;
+  transition: background 0.2s;
+}
+.stat-cell:hover { background: var(--off2); }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+.stat-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.card-divider { height: 1px; background: var(--border); margin: 1.1rem 0; }
+.card-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0;
+}
+.cf-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--off);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.cf-label {
+  font-size: 0.82rem;
+  color: var(--text);
+  font-weight: 400;
+  flex: 1;
+}
+.cf-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--success);
+  background: rgba(16,185,129,0.1);
+  padding: 0.18rem 0.55rem;
+  border-radius: 20px;
+}
+.hcard-cta {
+  display: block;
+  width: 100%;
+  margin-top: 1.2rem;
+  text-align: center;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.85rem;
+  border-radius: 2px;
+  transition: all 0.2s;
+  letter-spacing: 0.04em;
+}
+.hcard-cta:hover { background: var(--navy4); color: var(--accent); }
+
+/* ═══════════════════════════════════════════
+   CERTIFICATIONS STRIP
+═══════════════════════════════════════════ */
+.certif-strip {
+  background: var(--off);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 0;
+}
+.certif-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.certif-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding-right: 1.2rem;
+  border-right: 1px solid var(--border);
+  white-space: nowrap;
+}
+.certif-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  padding: 0.28rem 0.75rem;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s;
+}
+.certif-badge:hover { border-color: var(--accent); }
+
+/* ═══════════════════════════════════════════
+   SECTION COMMONS
+═══════════════════════════════════════════ */
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+.sec-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.7rem;
+}
+.sec-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.sec-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 480px;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   WHY SECTION
+═══════════════════════════════════════════ */
+#pourquoi {
+  padding: 6rem 0;
+  background: var(--white);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 4rem;
+}
+.why-feature {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.why-feature:first-child { padding-top: 0; }
+.why-feature:last-child { border-bottom: none; padding-bottom: 0; }
+.wf-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  position: relative;
+}
+.wf-icon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201,168,76,0.3);
+  transform: translate(2px,2px);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.wf-content h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.01em;
+}
+.wf-content p {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--muted);
+  font-weight: 300;
+}
+/* Panel */
+.why-panel {
+  background: var(--navy);
+  padding: 2.4rem;
+  border-radius: 4px;
+  position: sticky;
+  top: 90px;
+  overflow: hidden;
+}
+.why-panel::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.panel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.panel-sub {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1.8rem;
+  font-weight: 300;
+}
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+.metric-row:last-of-type { border-bottom: none; }
+.metric-label { font-size: 0.77rem; color: rgba(255,255,255,0.4); font-weight: 300; }
+.metric-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.metric-val.gold { color: var(--accent); }
+.panel-divider { height: 1px; background: var(--border-dark); margin: 1.5rem 0; }
+.panel-note {
+  font-size: 0.73rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.7;
+  font-weight: 300;
+}
+.panel-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--accent);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.9rem;
+  border-radius: 2px;
+  margin-top: 1.5rem;
+  transition: all 0.2s;
+  letter-spacing: 0.04em;
+}
+.panel-cta:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 8px 25px rgba(201,168,76,0.25); }
+
+/* ═══════════════════════════════════════════
+   CATEGORIES
+═══════════════════════════════════════════ */
+#categories {
+  padding: 6rem 0;
+  background: var(--off);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 2.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cat-card {
+  background: var(--white);
+  padding: 1.8rem 1.5rem;
+  transition: all 0.25s;
+  cursor: default;
+  position: relative;
+}
+.cat-card:hover { background: var(--navy); }
+.cat-card:hover .cat-title { color: var(--white); }
+.cat-card:hover .cat-desc { color: rgba(255,255,255,0.45); }
+.cat-card:hover .cat-tag { background: rgba(201,168,76,0.15); color: var(--accent); border-color: rgba(201,168,76,0.3); }
+.cat-emoji { font-size: 1.6rem; margin-bottom: 0.9rem; display: block; }
+.cat-title { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 0.35rem; }
+.cat-desc { font-size: 0.77rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+.cat-tag {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--off);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+/* ═══════════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════════ */
+#processus {
+  padding: 6rem 0;
+  background: var(--white);
+}
+.proc-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: 4rem;
+}
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  position: relative;
+}
+.proc-line {
+  position: absolute;
+  top: 21px;
+  left: calc(10% + 21px);
+  right: calc(10% + 21px);
+  height: 1px;
+  background: linear-gradient(to right, var(--accent), var(--border), var(--accent));
+  opacity: 0.4;
+}
+.proc-step { text-align: center; padding: 0 0.5rem; }
+.proc-num {
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 auto 1.2rem;
+  background: var(--white);
+  position: relative;
+  z-index: 1;
+  transition: all 0.25s;
+}
+.proc-step:hover .proc-num { background: var(--navy); color: var(--accent); border-color: var(--navy); }
+.proc-title { font-size: 0.8rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+.proc-desc { font-size: 0.74rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+/* ═══════════════════════════════════════════
+   GUARANTEES BAR
+═══════════════════════════════════════════ */
+.guarantees {
+  background: var(--navy);
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--border-dark);
+}
+.guar-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.guar-item {
+  padding: 1.2rem 2rem;
+  border-right: 1px solid var(--border-dark);
+  text-align: center;
+}
+.guar-item:last-child { border-right: none; }
+.guar-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.guar-title { font-size: 0.82rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+.guar-desc { font-size: 0.74rem; color: rgba(255,255,255,0.35); line-height: 1.65; font-weight: 300; }
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
+#contact {
+  padding: 6rem 0;
+  background: var(--off);
+  border-top: 1px solid var(--border);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 4rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+.contact-info {
+  background: var(--navy);
+  padding: 2.4rem;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-info::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ci-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1.8rem;
+}
+.ci-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+.ci-row:last-of-type { border-bottom: none; }
+.ci-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-dark);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+.ci-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.18rem;
+}
+.ci-val {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* FORM */
+.contact-form-wrap {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.form-header {
+  background: var(--navy);
+  padding: 1.1rem 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form-header-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+.form-header-title {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.form-body { padding: 2rem; }
+.field-group { margin-bottom: 1.1rem; }
+.field-group label {
+  display: block;
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.field-req { color: var(--accent); }
+.field-group input,
+.field-group textarea,
+.field-group select {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  background: var(--off);
+  color: var(--text);
+  padding: 0.7rem 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.87rem;
+  border-radius: 2px;
+  outline: none;
+  transition: all 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.field-group input:focus,
+.field-group textarea:focus,
+.field-group select:focus {
+  border-color: var(--accent);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+}
+.field-group textarea { height: 100px; resize: none; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.87rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+.btn-submit:hover { background: var(--navy4); color: var(--accent); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.form-note {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.form-confirm {
+  display: none;
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--success);
+  padding: 0.75rem;
+  background: rgba(16,185,129,0.07);
+  border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--navy);
+  border-top: 3px solid var(--accent);
+}
+.footer-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr;
+  gap: 3.5rem;
+}
+.footer-brand .logo-text-main { color: var(--white); }
+.footer-brand .logo-text-sub { color: rgba(255,255,255,0.25); }
+.footer-tagline {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.8;
+  margin-top: 1rem;
+  max-width: 280px;
+  font-weight: 300;
+}
+.footer-krs {
+  font-size: 0.66rem;
+  color: rgba(255,255,255,0.15);
+  margin-top: 0.8rem;
+  letter-spacing: 0.05em;
+}
+.footer-col-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 1rem;
+}
+.footer-col a,
+.footer-col p {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  border-top: 1px solid var(--border-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.03em;
+}
+.footer-accent-line {
+  width: 30px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* hero specific entrance */
+.hero-inner > div:first-child { animation: fadeUp 0.9s ease both; animation-delay: 0.1s; }
+.hero-inner > div:last-child { animation: fadeUp 0.9s ease both; animation-delay: 0.3s; }
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(30px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; padding-top: 5rem; }
+  .hero-card { max-width: 480px; }
+  .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .why-panel { position: static; }
+  .cat-grid { grid-template-columns: repeat(2,1fr); }
+  .proc-grid { grid-template-columns: repeat(3,1fr); gap: 2rem; }
+  .proc-line { display: none; }
+  .proc-step:nth-child(n+4) { margin-top: 2rem; }
+  .guar-grid { grid-template-columns: 1fr 1fr; }
+  .guar-item { border-right: none; border-bottom: 1px solid var(--border-dark); }
+  .guar-item:nth-child(2n) { }
+  .guar-item:last-child { border-bottom: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-main { grid-template-columns: 1fr; gap: 2rem; }
+  .nav-links { display: none; }
+  .proc-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+@media (max-width: 640px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .proc-grid { grid-template-columns: 1fr 1fr; }
+  .guar-grid { grid-template-columns: 1fr; }
+  .field-row { grid-template-columns: 1fr; }
+  .topbar-links { display: none; }
+  .btn-ghost { display: none; }
+  h1 { font-size: 2.6rem; }
+  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .hero-inner { padding-top: 4rem; }
+}
+@media (max-width: 380px) {
+  h1 { font-size: 2.2rem; }
+}
+
+/* Mobile menu toggle */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: 1.5px solid var(--border);
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  color: var(--navy);
+}
+@media (max-width: 1024px) {
+  .mobile-menu-btn { display: block; }
+}
+.mobile-nav {
+  display: none;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav a {
+  display: block;
+  padding: 0.7rem 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <div class="topbar-dot"></div>
+      <span id="t-topbar">UNIOTRADE SP. Z O.O. — KRS 0001113345 — Kraków, Pologne</span>
+    </div>
+    <div class="topbar-links">
+      <a href="/cdn-cgi/l/email-protection#3d48535452494f5c5958135e5253495c5e497d5a505c5451135e5250">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span class="__cf_email__" data-cfemail="24514a4d4b50564540410a474b4a50454750644349454d480a474b49">[email&#160;protected]</span>
+      </a>
+      <a href="tel:+32496039306">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +32 496 03 93 06
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark"><span>U</span></div>
+      <div>
+        <span class="logo-text-main">UNIOTRADE</span>
+        <span class="logo-text-sub">Import · Export · Europe</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#pourquoi" id="t-nav1">Pourquoi nous</a></li>
+      <li><a href="#categories" id="t-nav2">Produits</a></li>
+      <li><a href="#processus" id="t-nav3">Processus</a></li>
+      <li><a href="#contact" id="t-nav4">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('pl')">PL</button>
+      </div>
+      <a href="tel:+32496039306" class="btn-ghost">+32 496 03 93 06</a>
+      <a href="#contact" class="btn-gold" id="t-nav-cta">Devis gratuit</a>
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#pourquoi" id="t-mnav1" onclick="closeMobileNav()">Pourquoi nous</a>
+    <a href="#categories" id="t-mnav2" onclick="closeMobileNav()">Produits</a>
+    <a href="#processus" id="t-mnav3" onclick="closeMobileNav()">Processus</a>
+    <a href="#contact" id="t-mnav4" onclick="closeMobileNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow2"></div>
+  <div class="hero-deco-line"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text" id="t-badge">Importateur direct certifié · Chine → Europe</span>
+      </div>
+      <h1 id="t-h1">Votre partenaire<br>d'import direct<br><em>Chine — Europe</em></h1>
+      <p class="hero-p" id="t-hero-p">Nous sourçons, contrôlons et livrons des produits certifiés CE directement depuis les meilleurs fabricants chinois jusqu'à votre boutique — partout dans les 27 pays de l'Union Européenne.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary" id="t-btn1">
+          Obtenir un devis gratuit
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#pourquoi" class="btn-secondary" id="t-btn2">En savoir plus</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-check">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span id="t-c1">Réponse sous 24h</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-check">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span id="t-c2">Certifications CE incluses</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-check">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span id="t-c3">Pas de stock minimum</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div class="hcard-header">
+          <div class="hcard-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="hcard-title" id="t-card-head">Tableau de bord partenaire</span>
+        </div>
+        <div class="hcard-body">
+          <div class="stats-grid">
+            <div class="stat-cell"><div class="stat-num">27+</div><div class="stat-label" id="t-s1">Pays livrés</div></div>
+            <div class="stat-cell"><div class="stat-num">500+</div><div class="stat-label" id="t-s2">Références</div></div>
+            <div class="stat-cell"><div class="stat-num">100%</div><div class="stat-label" id="t-s3">Contrôlé</div></div>
+            <div class="stat-cell"><div class="stat-num">24h</div><div class="stat-label" id="t-s4">Réponse devis</div></div>
+          </div>
+          <div class="card-divider"></div>
+          <div class="card-feature">
+            <div class="cf-icon">🏠</div>
+            <span class="cf-label">Maison & Lifestyle</span>
+            <span class="cf-badge avail-text" id="t-avail1">✓ Dispo</span>
+          </div>
+          <div class="card-feature">
+            <div class="cf-icon">⚡</div>
+            <span class="cf-label">Électronique & Gadgets</span>
+            <span class="cf-badge avail-text" id="t-avail2">✓ Dispo</span>
+          </div>
+          <div class="card-feature">
+            <div class="cf-icon">✨</div>
+            <span class="cf-label">Beauté & Bien-être</span>
+            <span class="cf-badge avail-text" id="t-avail3">✓ Dispo</span>
+          </div>
+          <div class="card-feature">
+            <div class="cf-icon">👗</div>
+            <span class="cf-label">Textile & Mode</span>
+            <span class="cf-badge avail-text" id="t-avail4">✓ Dispo</span>
+          </div>
+          <a href="#contact" class="hcard-cta" id="t-card-btn">Demander un devis gratuit →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS STRIP -->
+<div class="certif-strip">
+  <div class="certif-inner">
+    <span class="certif-label" id="t-cert-lbl">Certifications produits</span>
+    <span class="certif-badge">CE</span>
+    <span class="certif-badge">REACH</span>
+    <span class="certif-badge">RoHS</span>
+    <span class="certif-badge">OEKO-TEX</span>
+    <span class="certif-badge">EN71</span>
+    <span class="certif-badge">LFGB</span>
+    <span class="certif-badge">KRS 0001113345</span>
+  </div>
+</div>
+
+<!-- WHY -->
+<section id="pourquoi">
+  <div class="wrap">
+    <div class="sec-label reveal" id="t-why-lbl">Pourquoi nous choisir</div>
+    <h2 class="reveal" id="t-why-h2">L'import direct,<br>sans la complexité</h2>
+    <p class="sec-desc reveal" id="t-why-desc">Nous gérons tout de A à Z — du fabricant chinois à votre porte. Vous vous concentrez sur la vente.</p>
+    <div class="why-grid">
+      <div>
+        <div class="why-feature reveal">
+          <div class="wf-icon">🎯</div>
+          <div class="wf-content">
+            <h3 id="t-wt1">Sourcing sur mesure en 24h</h3>
+            <p id="t-wp1">Décrivez le produit que vous voulez vendre. Nous identifions les meilleurs fabricants, négocions les prix et vous soumettons une sélection avec visuels HD sous 24h ouvrées.</p>
+          </div>
+        </div>
+        <div class="why-feature reveal">
+          <div class="wf-icon">🔒</div>
+          <div class="wf-content">
+            <h3 id="t-wt2">Contrôle qualité de A à Z</h3>
+            <p id="t-wp2">Chaque commande est inspectée avant expédition : conformité produit, emballage, certifications CE, documentation douanière. Zéro mauvaise surprise à la réception.</p>
+          </div>
+        </div>
+        <div class="why-feature reveal">
+          <div class="wf-icon">🌍</div>
+          <div class="wf-content">
+            <h3 id="t-wt3">Livraison dans toute l'Europe</h3>
+            <p id="t-wp3">Hub logistique en Pologne, au cœur de l'UE. Livraison rapide en Belgique, France, Pays-Bas, Allemagne et dans les 27 pays UE. Dédouanement inclus.</p>
+          </div>
+        </div>
+        <div class="why-feature reveal">
+          <div class="wf-icon">💶</div>
+          <div class="wf-content">
+            <h3 id="t-wt4">Marges grossistes préservées</h3>
+            <p id="t-wp4">Import direct sans intermédiaire. Prix proches des tarifs usine avec une marge x2 à x3 confortable pour votre revente en boutique ou en ligne.</p>
+          </div>
+        </div>
+        <div class="why-feature reveal">
+          <div class="wf-icon">📦</div>
+          <div class="wf-content">
+            <h3 id="t-wt5">MOQ flexible — commandes test acceptées</h3>
+            <p id="t-wp5">Pas de containers imposés. Petites quantités test pour valider un produit avant de scaler. Idéal pour tester sans risque financier.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-panel reveal">
+        <div class="panel-title" id="t-pt">Indicateurs partenaire</div>
+        <div class="panel-sub" id="t-ps">Performance de notre réseau d'import direct</div>
+        <div class="metric-row"><span class="metric-label" id="t-m1">Délai réponse devis</span><span class="metric-val gold">24h</span></div>
+        <div class="metric-row"><span class="metric-label" id="t-m2">Pays livrés UE</span><span class="metric-val">27</span></div>
+        <div class="metric-row"><span class="metric-label" id="t-m3">Références disponibles</span><span class="metric-val">500+</span></div>
+        <div class="metric-row"><span class="metric-label" id="t-m4">Contrôle qualité</span><span class="metric-val gold">100%</span></div>
+        <div class="metric-row"><span class="metric-label" id="t-m5">Acompte 1ère commande</span><span class="metric-val">30%</span></div>
+        <div class="metric-row"><span class="metric-label" id="t-m6">Délai moyen expédition</span><span class="metric-val">3–5 sem.</span></div>
+        <div class="panel-divider"></div>
+        <p class="panel-note" id="t-pnote">Remplacement ou remboursement 100% en cas de défaut de fabrication constaté à la livraison.</p>
+        <a href="#contact" class="panel-cta" id="t-pbtn">Démarrer un partenariat →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="wrap">
+    <div class="sec-label reveal" id="t-cat-lbl">Nos catégories</div>
+    <h2 class="reveal" id="t-cat-h2">Une gamme large,<br>des produits certifiés</h2>
+    <p class="sec-desc reveal" id="t-cat-desc">Dites-nous ce que vous voulez vendre — nous avons très probablement la solution.</p>
+    <div class="cat-grid reveal">
+      <div class="cat-card"><span class="cat-emoji">🏠</span><div class="cat-title" id="t-ct1">Maison & Lifestyle</div><div class="cat-desc" id="t-cd1">Décoration, rangement, éclairage, bougies, diffuseurs, textiles maison — idéal concept stores.</div><span class="cat-tag">CE · REACH</span></div>
+      <div class="cat-card"><span class="cat-emoji">⚡</span><div class="cat-title" id="t-ct2">Électronique & Gadgets</div><div class="cat-desc" id="t-cd2">Chargeurs, accessoires smartphone, enceintes, objets connectés, petits électroménagers tendance.</div><span class="cat-tag">CE · RoHS</span></div>
+      <div class="cat-card"><span class="cat-emoji">✨</span><div class="cat-title" id="t-ct3">Beauté & Bien-être</div><div class="cat-desc" id="t-cd3">Soins visage, masseurs, diffuseurs huiles essentielles, outils beauté — normes UE strictes.</div><span class="cat-tag">REACH · CE</span></div>
+      <div class="cat-card"><span class="cat-emoji">👗</span><div class="cat-title" id="t-ct4">Textile & Mode</div><div class="cat-desc" id="t-cd4">Vêtements, accessoires, sacs, écharpes — personnalisation logo possible sur commande.</div><span class="cat-tag">OEKO-TEX</span></div>
+      <div class="cat-card"><span class="cat-emoji">🎮</span><div class="cat-title" id="t-ct5">Loisirs & Enfants</div><div class="cat-desc" id="t-cd5">Jouets, jeux éducatifs, sport, plein air — certifiés EN71, conformes sécurité UE.</div><span class="cat-tag">EN71 · CE</span></div>
+      <div class="cat-card"><span class="cat-emoji">🍳</span><div class="cat-title" id="t-ct6">Cuisine & Art de vivre</div><div class="cat-desc" id="t-cd6">Ustensiles, bocaux, accessoires cuisine, arts de la table — certifiés LFGB contact alimentaire.</div><span class="cat-tag">LFGB · CE</span></div>
+      <div class="cat-card"><span class="cat-emoji">🌿</span><div class="cat-title" id="t-ct7">Éco-responsable</div><div class="cat-desc" id="t-cd7">Produits durables, zéro déchet, matières naturelles — forte tendance en Europe, fortes marges.</div><span class="cat-tag">OEKO-TEX</span></div>
+      <div class="cat-card"><span class="cat-emoji">📦</span><div class="cat-title" id="t-ct8">Sur demande</div><div class="cat-desc" id="t-cd8">Un produit hors liste ? Contactez-nous — notre réseau couvre quasiment toutes les catégories.</div><span class="cat-tag" id="t-ctag8">Devis 24h</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="processus">
+  <div class="wrap">
+    <div class="proc-intro">
+      <div>
+        <div class="sec-label reveal" id="t-proc-lbl">Notre processus</div>
+        <h2 class="reveal" id="t-proc-h2">De votre demande<br>à votre porte</h2>
+      </div>
+      <div></div>
+    </div>
+    <div class="proc-grid reveal">
+      <div class="proc-line"></div>
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <div class="proc-title" id="t-ps1">Votre demande</div>
+        <div class="proc-desc" id="t-pd1">Décrivez le produit, la quantité estimée et votre budget. Aucun engagement.</div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <div class="proc-title" id="t-ps2">Sourcing</div>
+        <div class="proc-desc" id="t-pd2">Sélection des meilleurs fabricants, négociation des prix, offre sous 24h.</div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <div class="proc-title" id="t-ps3">Contrôle qualité</div>
+        <div class="proc-desc" id="t-pd3">Inspection complète avant expédition. Certifications et conformité CE vérifiées.</div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">4</div>
+        <div class="proc-title" id="t-ps4">Expédition</div>
+        <div class="proc-desc" id="t-pd4">Transport et dédouanement en Pologne gérés de A à Z.</div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">5</div>
+        <div class="proc-title" id="t-ps5">Livraison EU</div>
+        <div class="proc-desc" id="t-pd5">Réception à votre adresse partout dans les 27 pays de l'UE.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEES -->
+<div class="guarantees">
+  <div class="guar-grid">
+    <div class="guar-item">
+      <div class="guar-icon">🛡️</div>
+      <div class="guar-title" id="t-g1t">Conformité CE garantie</div>
+      <div class="guar-desc" id="t-g1d">Certifications européennes requises fournies selon catégorie produit.</div>
+    </div>
+    <div class="guar-item">
+      <div class="guar-icon">🔄</div>
+      <div class="guar-title" id="t-g2t">Remplacement 100%</div>
+      <div class="guar-desc" id="t-g2d">Défaut constaté à la livraison ? Remplacement ou remboursement intégral.</div>
+    </div>
+    <div class="guar-item">
+      <div class="guar-icon">📸</div>
+      <div class="guar-title" id="t-g3t">Visuels HD fournis</div>
+      <div class="guar-desc" id="t-g3d">Photos haute définition et fiches produits prêtes à l'emploi incluses.</div>
+    </div>
+    <div class="guar-item">
+      <div class="guar-icon">🤝</div>
+      <div class="guar-title" id="t-g4t">Partenariat long terme</div>
+      <div class="guar-desc" id="t-g4d">Prix dégressifs avec le volume. Relations durables et transparentes.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-label reveal" id="t-cont-lbl">Contact & Devis</div>
+    <h2 class="reveal" id="t-cont-h2">Travaillons ensemble</h2>
+    <p class="sec-desc reveal" id="t-cont-desc">Un produit en tête ? Devis gratuit et personnalisé sous 24h ouvrées.</p>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="ci-title" id="t-ci-title">Coordonnées</div>
+        <div class="ci-row">
+          <div class="ci-icon">📧</div>
+          <div><div class="ci-label" id="t-cl1">Email</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2f5a4146405b5d4e4b4a014c40415b4e4c5b6f48424e4643014c4042">[email&#160;protected]</a></div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon">📱</div>
+          <div><div class="ci-label" id="t-cl2">Téléphone / WhatsApp</div><div class="ci-val">+32 496 03 93 06</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon">👤</div>
+          <div><div class="ci-label" id="t-cl3">Dirigeant & CEO</div><div class="ci-val">Collet Thomas</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon">🏢</div>
+          <div><div class="ci-label" id="t-cl4">Société enregistrée</div><div class="ci-val">UNIOTRADE SP. Z O.O.<br>KRS 0001113345 — Kraków, Pologne</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon">🌍</div>
+          <div><div class="ci-label" id="t-cl5">Zone de livraison</div><div class="ci-val" id="t-cv5">Toute l'Europe — 27 pays UE<br>+ UK, Suisse, Norvège</div></div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon">⏱</div>
+          <div><div class="ci-label" id="t-cl6">Délai de réponse</div><div class="ci-val" id="t-cv6">Sous 24h ouvrées</div></div>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <div class="form-header">
+          <div class="form-header-dot"></div>
+          <span class="form-header-title" id="t-form-head">Formulaire de demande de devis</span>
+        </div>
+        <div class="form-body">
+          <div class="field-row">
+            <div class="field-group">
+              <label id="t-fl1">Prénom & Nom <span class="field-req">*</span></label>
+              <input type="text" id="inp-name" name="nom" placeholder="Jean Dupont"/>
+            </div>
+            <div class="field-group">
+              <label id="t-fl2">Société</label>
+              <input type="text" id="inp-company" name="societe" placeholder="Ma Boutique SRL"/>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label id="t-fl3">Email <span class="field-req">*</span></label>
+              <input type="email" id="inp-email" name="email" placeholder="contact@maboutique.be"/>
+            </div>
+            <div class="field-group">
+              <label id="t-fl4">Téléphone</label>
+              <input type="tel" id="inp-phone" name="telephone" placeholder="+32 XXX XX XX XX"/>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-group">
+              <label id="t-fl5">Pays de livraison</label>
+              <select id="sel-country" name="pays">
+                <option value="">Sélectionnez...</option>
+                <option>Belgique</option><option>France</option><option>Pays-Bas</option>
+                <option>Luxembourg</option><option>Allemagne</option><option>Autre pays UE</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label id="t-fl6">Catégorie produits</label>
+              <select id="sel-cat" name="categorie">
+                <option value="">Sélectionnez...</option>
+                <option>Maison & Lifestyle</option><option>Électronique & Gadgets</option>
+                <option>Beauté & Bien-être</option><option>Textile & Mode</option>
+                <option>Loisirs & Enfants</option><option>Cuisine & Art de vivre</option><option>Autre</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-group">
+            <label id="t-fl7">Votre demande <span class="field-req">*</span></label>
+            <textarea id="inp-message" name="message" placeholder="Décrivez le produit recherché, la quantité estimée, votre budget cible..."></textarea>
+          </div>
+          <button class="btn-submit" id="btn-submit" type="button" onclick="submitForm()">Envoyer ma demande de devis →</button>
+          <div class="form-confirm" id="form-confirm"></div>
+          <p class="form-note" id="t-fnote">Devis gratuit · Sans engagement · Réponse sous 24h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-mark"><span>U</span></div>
+        <div>
+          <span class="logo-text-main">UNIOTRADE</span>
+          <span class="logo-text-sub">Import · Export · Europe</span>
+        </div>
+      </div>
+      <p class="footer-tagline" id="t-ftagline">Importateur direct certifié entre la Chine et l'Europe. Contrôle qualité A à Z. Livraison dans 27 pays UE.</p>
+      <p class="footer-krs">UNIOTRADE SP. Z O.O. · KRS 0001113345 · Kraków, Pologne</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" id="t-ftag1">Navigation</div>
+      <a href="#pourquoi" id="t-fn1">Pourquoi nous</a>
+      <a href="#categories" id="t-fn2">Nos produits</a>
+      <a href="#processus" id="t-fn3">Notre processus</a>
+      <a href="#contact" id="t-fn4">Contact & Devis</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title" id="t-ftag2">Contact</div>
+      <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc89929593888e9d9899d29f9392889d9f88bc9b919d9590d29f9391">[email&#160;protected]</a></p>
+      <p>+32 496 03 93 06</p>
+      <p>Collet Thomas — CEO</p>
+      <p>Kraków, Pologne</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy" id="t-fcopy1">© 2026 UNIOTRADE SP. Z O.O. · Tous droits réservés</span>
+    <div class="footer-accent-line"></div>
+    <span class="footer-copy" id="t-fcopy2">KRS 0001113345 · Pologne · Union Européenne</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ═══════════════════════════════════════════
+   TRANSLATIONS
+═══════════════════════════════════════════ */
+const T = {
+fr:{
+  topbar:"UNIOTRADE SP. Z O.O. — KRS 0001113345 — Kraków, Pologne",
+  nav1:"Pourquoi nous",nav2:"Produits",nav3:"Processus",nav4:"Contact",navcta:"Devis gratuit",
+  mnav1:"Pourquoi nous",mnav2:"Produits",mnav3:"Processus",mnav4:"Contact",
+  badge:"Importateur direct certifié · Chine → Europe",
+  h1:"Votre partenaire<br>d'import direct<br><em>Chine — Europe</em>",
+  herop:"Nous sourçons, contrôlons et livrons des produits certifiés CE directement depuis les meilleurs fabricants chinois jusqu'à votre boutique — partout dans les 27 pays de l'Union Européenne.",
+  btn1:"Obtenir un devis gratuit",btn2:"En savoir plus",
+  c1:"Réponse sous 24h",c2:"Certifications CE incluses",c3:"Pas de stock minimum",
+  cardhead:"Tableau de bord partenaire",
+  s1:"Pays livrés",s2:"Références",s3:"Contrôlé",s4:"Réponse devis",
+  avail:"✓ Dispo",cardbtn:"Demander un devis gratuit →",certlbl:"Certifications produits",
+  whylbl:"Pourquoi nous choisir",whyh2:"L'import direct,<br>sans la complexité",
+  whydesc:"Nous gérons tout de A à Z — du fabricant chinois à votre porte. Vous vous concentrez sur la vente.",
+  wt1:"Sourcing sur mesure en 24h",wp1:"Décrivez le produit que vous voulez vendre. Nous identifions les meilleurs fabricants, négocions les prix et vous soumettons une sélection avec visuels HD sous 24h ouvrées.",
+  wt2:"Contrôle qualité de A à Z",wp2:"Chaque commande est inspectée avant expédition : conformité produit, emballage, certifications CE, documentation douanière. Zéro mauvaise surprise à la réception.",
+  wt3:"Livraison dans toute l'Europe",wp3:"Hub logistique en Pologne, au cœur de l'UE. Livraison rapide en Belgique, France, Pays-Bas, Allemagne et dans les 27 pays UE. Dédouanement inclus.",
+  wt4:"Marges grossistes préservées",wp4:"Import direct sans intermédiaire. Prix proches des tarifs usine avec une marge x2 à x3 confortable pour votre revente en boutique ou en ligne.",
+  wt5:"MOQ flexible — commandes test acceptées",wp5:"Pas de containers imposés. Petites quantités test pour valider un produit avant de scaler. Idéal pour tester sans risque financier.",
+  pt:"Indicateurs partenaire",ps:"Performance de notre réseau d'import direct",
+  m1:"Délai réponse devis",m2:"Pays livrés UE",m3:"Références disponibles",m4:"Contrôle qualité",m5:"Acompte 1ère commande",m6:"Délai moyen expédition",
+  pnote:"Remplacement ou remboursement 100% en cas de défaut de fabrication constaté à la livraison.",
+  pbtn:"Démarrer un partenariat →",
+  catlbl:"Nos catégories",cath2:"Une gamme large,<br>des produits certifiés",catdesc:"Dites-nous ce que vous voulez vendre — nous avons très probablement la solution.",
+  ct1:"Maison & Lifestyle",cd1:"Décoration, rangement, éclairage, bougies, diffuseurs, textiles maison — idéal concept stores.",
+  ct2:"Électronique & Gadgets",cd2:"Chargeurs, accessoires smartphone, enceintes, objets connectés, petits électroménagers tendance.",
+  ct3:"Beauté & Bien-être",cd3:"Soins visage, masseurs, diffuseurs huiles essentielles, outils beauté — normes UE strictes.",
+  ct4:"Textile & Mode",cd4:"Vêtements, accessoires, sacs, écharpes — personnalisation logo possible sur commande.",
+  ct5:"Loisirs & Enfants",cd5:"Jouets, jeux éducatifs, sport, plein air — certifiés EN71, conformes sécurité UE.",
+  ct6:"Cuisine & Art de vivre",cd6:"Ustensiles, bocaux, accessoires cuisine, arts de la table — certifiés LFGB contact alimentaire.",
+  ct7:"Éco-responsable",cd7:"Produits durables, zéro déchet, matières naturelles — forte tendance en Europe, fortes marges.",
+  ct8:"Sur demande",cd8:"Un produit hors liste ? Contactez-nous — notre réseau couvre quasiment toutes les catégories.",ctag8:"Devis 24h",
+  proclbl:"Notre processus",proch2:"De votre demande<br>à votre porte",
+  ps1:"Votre demande",pd1:"Décrivez le produit, la quantité estimée et votre budget. Aucun engagement.",
+  ps2:"Sourcing",pd2:"Sélection des meilleurs fabricants, négociation des prix, offre sous 24h.",
+  ps3:"Contrôle qualité",pd3:"Inspection complète avant expédition. Certifications et conformité CE vérifiées.",
+  ps4:"Expédition",pd4:"Transport et dédouanement en Pologne gérés de A à Z.",
+  ps5:"Livraison EU",pd5:"Réception à votre adresse partout dans les 27 pays de l'UE.",
+  g1t:"Conformité CE garantie",g1d:"Certifications européennes requises fournies selon catégorie produit.",
+  g2t:"Remplacement 100%",g2d:"Défaut constaté à la livraison ? Remplacement ou remboursement intégral.",
+  g3t:"Visuels HD fournis",g3d:"Photos haute définition et fiches produits prêtes à l'emploi incluses.",
+  g4t:"Partenariat long terme",g4d:"Prix dégressifs avec le volume. Relations durables et transparentes.",
+  contlbl:"Contact & Devis",conth2:"Travaillons ensemble",contdesc:"Un produit en tête ? Devis gratuit et personnalisé sous 24h ouvrées.",
+  cititle:"Coordonnées",cl1:"Email",cl2:"Téléphone / WhatsApp",cl3:"Dirigeant & CEO",cl4:"Société enregistrée",cl5:"Zone de livraison",cl6:"Délai de réponse",
+  cv5:"Toute l'Europe — 27 pays UE<br>+ UK, Suisse, Norvège",cv6:"Sous 24h ouvrées",
+  formhead:"Formulaire de demande de devis",
+  fl1:"Prénom & Nom",fl2:"Société",fl3:"Email",fl4:"Téléphone",fl5:"Pays de livraison",fl6:"Catégorie produits",fl7:"Votre demande",
+  ph_name:"Jean Dupont",ph_company:"Ma Boutique SRL",ph_email:"contact@maboutique.be",ph_phone:"+32 XXX XX XX XX",ph_msg:"Décrivez le produit recherché, la quantité estimée, votre budget cible...",
+  fopt0:"Sélectionnez...",country:["Belgique","France","Pays-Bas","Luxembourg","Allemagne","Autre pays UE"],
+  foptc0:"Sélectionnez...",cat:["Maison & Lifestyle","Électronique & Gadgets","Beauté & Bien-être","Textile & Mode","Loisirs & Enfants","Cuisine & Art de vivre","Autre"],
+  btnsend:"Envoyer ma demande de devis →",sending:"Envoi en cours...",confirm:"✓ Demande envoyée — vous recevrez une réponse sous 24h ouvrées.",
+  fnote:"Devis gratuit · Sans engagement · Réponse sous 24h",
+  ftag1:"Navigation",ftag2:"Contact",fn1:"Pourquoi nous",fn2:"Nos produits",fn3:"Notre processus",fn4:"Contact & Devis",
+  ftagline:"Importateur direct certifié entre la Chine et l'Europe. Contrôle qualité A à Z. Livraison dans 27 pays UE.",
+  fcopy1:"© 2026 UNIOTRADE SP. Z O.O. · Tous droits réservés",fcopy2:"KRS 0001113345 · Pologne · Union Européenne",
+  title:"UNIOTRADE — Importateur Direct Chine · Europe"
+},
+en:{
+  topbar:"UNIOTRADE SP. Z O.O. — KRS 0001113345 — Kraków, Poland",
+  nav1:"Why us",nav2:"Products",nav3:"Process",nav4:"Contact",navcta:"Free quote",
+  mnav1:"Why us",mnav2:"Products",mnav3:"Process",mnav4:"Contact",
+  badge:"Certified direct importer · China → Europe",
+  h1:"Your direct import<br>partner<br><em>China — Europe</em>",
+  herop:"We source, inspect and deliver CE-certified products directly from the best Chinese manufacturers to your store — anywhere across the 27 EU member states.",
+  btn1:"Get a free quote",btn2:"Learn more",
+  c1:"Response within 24h",c2:"CE certifications included",c3:"No minimum stock",
+  cardhead:"Partner dashboard",
+  s1:"Countries served",s2:"References",s3:"Inspected",s4:"Quote reply",
+  avail:"✓ Available",cardbtn:"Request a free quote →",certlbl:"Product certifications",
+  whylbl:"Why choose us",whyh2:"Direct import,<br>without the complexity",
+  whydesc:"We handle everything from A to Z — from the Chinese manufacturer to your door. You focus on selling.",
+  wt1:"Custom sourcing in 24h",wp1:"Describe the product you want to sell. We identify the best manufacturers, negotiate prices and send you a selection with HD visuals within 24 business hours.",
+  wt2:"Quality control A to Z",wp2:"Every order is inspected before shipping: product compliance, packaging, CE certifications, customs documentation. Zero surprises upon delivery.",
+  wt3:"Delivery across all of Europe",wp3:"Logistics hub in Poland, at the heart of the EU. Fast delivery to Belgium, France, Netherlands, Germany and all 27 EU countries. Customs clearance included.",
+  wt4:"Wholesale margins preserved",wp4:"Direct import with no unnecessary middleman. Prices close to factory rates, giving you a comfortable x2 to x3 margin for resale in store or online.",
+  wt5:"Flexible MOQ — test orders accepted",wp5:"No containers required. Small test quantities to validate a product before scaling. Ideal for risk-free testing.",
+  pt:"Partner metrics",ps:"Performance of our direct import network",
+  m1:"Quote response time",m2:"EU countries served",m3:"References available",m4:"Quality control",m5:"First order deposit",m6:"Average shipping time",
+  pnote:"100% replacement or refund for any manufacturing defect found at delivery.",
+  pbtn:"Start a partnership →",
+  catlbl:"Our categories",cath2:"A broad range,<br>certified products",catdesc:"Tell us what you want to sell — we most likely have the solution.",
+  ct1:"Home & Lifestyle",cd1:"Decoration, storage, lighting, candles, diffusers, home textiles — perfect for concept stores.",
+  ct2:"Electronics & Gadgets",cd2:"Chargers, smartphone accessories, speakers, connected devices, trending small appliances.",
+  ct3:"Beauty & Wellness",cd3:"Face care, massagers, essential oil diffusers, beauty tools — strict EU standards.",
+  ct4:"Textile & Fashion",cd4:"Clothing, accessories, bags, scarves — logo customisation available on order.",
+  ct5:"Leisure & Children",cd5:"Toys, educational games, sports, outdoor — EN71 certified, EU safety compliant.",
+  ct6:"Kitchen & Tableware",cd6:"Utensils, jars, kitchen accessories, tableware — LFGB certified for food contact.",
+  ct7:"Eco-friendly",cd7:"Sustainable products, zero waste, natural materials — strong European trend, great margins.",
+  ct8:"On demand",cd8:"Product not in the list? Contact us — our network covers virtually all categories.",ctag8:"Quote 24h",
+  proclbl:"Our process",proch2:"From your request<br>to your door",
+  ps1:"Your request",pd1:"Describe the product, estimated quantity and budget. No commitment.",
+  ps2:"Sourcing",pd2:"Selection of best manufacturers, price negotiation, offer within 24h.",
+  ps3:"Quality control",pd3:"Full inspection before shipping. Certifications and CE compliance verified.",
+  ps4:"Shipping",pd4:"Transport and customs clearance in Poland handled A to Z.",
+  ps5:"EU delivery",pd5:"Delivery to your address anywhere in the 27 EU countries.",
+  g1t:"CE compliance guaranteed",g1d:"Required European certifications provided according to product category.",
+  g2t:"100% replacement",g2d:"Defect found at delivery? Full replacement or refund.",
+  g3t:"HD visuals provided",g3d:"High resolution photos and ready-to-use product sheets included.",
+  g4t:"Long-term partnership",g4d:"Volume-based pricing. Durable and transparent relationships.",
+  contlbl:"Contact & Quote",conth2:"Let's work together",contdesc:"Have a product in mind? Free personalised quote within 24 business hours.",
+  cititle:"Contact details",cl1:"Email",cl2:"Phone / WhatsApp",cl3:"CEO & Director",cl4:"Registered company",cl5:"Delivery zone",cl6:"Response time",
+  cv5:"All of Europe — 27 EU countries<br>+ UK, Switzerland, Norway",cv6:"Within 24 business hours",
+  formhead:"Quote request form",
+  fl1:"First & Last name",fl2:"Company",fl3:"Email",fl4:"Phone",fl5:"Delivery country",fl6:"Product category",fl7:"Your request",
+  ph_name:"John Smith",ph_company:"My Shop Ltd",ph_email:"contact@myshop.eu",ph_phone:"+32 XXX XX XX XX",ph_msg:"Describe the product you're looking for, estimated quantity, target budget...",
+  fopt0:"Select...",country:["Belgium","France","Netherlands","Luxembourg","Germany","Other EU country"],
+  foptc0:"Select...",cat:["Home & Lifestyle","Electronics & Gadgets","Beauty & Wellness","Textile & Fashion","Leisure & Children","Kitchen & Tableware","Other"],
+  btnsend:"Send my quote request →",sending:"Sending...",confirm:"✓ Request sent — you will receive a reply within 24 business hours.",
+  fnote:"Free quote · No commitment · Reply within 24h",
+  ftag1:"Navigation",ftag2:"Contact",fn1:"Why us",fn2:"Our products",fn3:"Our process",fn4:"Contact & Quote",
+  ftagline:"Certified direct importer between China and Europe. Quality control A to Z. Delivery in 27 EU countries.",
+  fcopy1:"© 2026 UNIOTRADE SP. Z O.O. · All rights reserved",fcopy2:"KRS 0001113345 · Poland · European Union",
+  title:"UNIOTRADE — Direct Importer China · Europe"
+},
+pl:{
+  topbar:"UNIOTRADE SP. Z O.O. — KRS 0001113345 — Kraków, Polska",
+  nav1:"Dlaczego my",nav2:"Produkty",nav3:"Proces",nav4:"Kontakt",navcta:"Bezpłatna oferta",
+  mnav1:"Dlaczego my",mnav2:"Produkty",mnav3:"Proces",mnav4:"Kontakt",
+  badge:"Certyfikowany importer bezpośredni · Chiny → Europa",
+  h1:"Twój partner<br>importu bezpośredniego<br><em>Chiny — Europa</em>",
+  herop:"Pozyskujemy, kontrolujemy i dostarczamy produkty z certyfikatem CE bezpośrednio od najlepszych chińskich producentów do Twojego sklepu — w całej Unii Europejskiej.",
+  btn1:"Uzyskaj bezpłatną ofertę",btn2:"Dowiedz się więcej",
+  c1:"Odpowiedź w 24h",c2:"Certyfikaty CE w zestawie",c3:"Bez minimalnego stanu magazynowego",
+  cardhead:"Panel partnera",
+  s1:"Obsługiwane kraje",s2:"Referencje",s3:"Skontrolowane",s4:"Oferta w",
+  avail:"✓ Dostępne",cardbtn:"Poproś o bezpłatną ofertę →",certlbl:"Certyfikaty produktów",
+  whylbl:"Dlaczego warto nas wybrać",whyh2:"Bezpośredni import,<br>bez komplikacji",
+  whydesc:"Zajmujemy się wszystkim od A do Z — od chińskiego producenta do Twoich drzwi. Ty skupiasz się na sprzedaży.",
+  wt1:"Sourcing na miarę w 24h",wp1:"Opisz produkt, który chcesz sprzedawać. Identyfikujemy najlepszych producentów, negocjujemy ceny i przesyłamy Ci ofertę z zdjęciami HD w ciągu 24 godzin roboczych.",
+  wt2:"Kontrola jakości od A do Z",wp2:"Każde zamówienie jest sprawdzane przed wysyłką: zgodność produktu, opakowanie, certyfikaty CE, dokumentacja celna. Zero niespodzianek przy odbiorze.",
+  wt3:"Dostawa w całej Europie",wp3:"Hub logistyczny w Polsce, w centrum UE. Szybka dostawa do Belgii, Francji, Holandii, Niemiec i wszystkich 27 krajów UE. Odprawa celna w cenie.",
+  wt4:"Zachowane marże hurtowe",wp4:"Import bezpośredni bez zbędnych pośredników. Ceny zbliżone do fabrycznych, zapewniające komfortową marżę x2 do x3 przy odsprzedaży.",
+  wt5:"Elastyczne MOQ — zamówienia testowe akceptowane",wp5:"Nie wymagamy kontenerów. Małe ilości testowe, aby zwalidować produkt przed skalowaniem. Idealne do testowania bez ryzyka finansowego.",
+  pt:"Wskaźniki partnerskie",ps:"Wyniki naszej sieci importu bezpośredniego",
+  m1:"Czas odpowiedzi na ofertę",m2:"Obsługiwane kraje UE",m3:"Dostępne referencje",m4:"Kontrola jakości",m5:"Zaliczka pierwsze zamówienie",m6:"Śr. czas wysyłki",
+  pnote:"100% wymiana lub zwrot pieniędzy za wszelkie wady produkcyjne stwierdzone przy dostawie.",
+  pbtn:"Rozpocznij współpracę →",
+  catlbl:"Nasze kategorie",cath2:"Szeroka oferta,<br>certyfikowane produkty",catdesc:"Powiedz nam, co chcesz sprzedawać — najprawdopodobniej mamy rozwiązanie.",
+  ct1:"Dom & Lifestyle",cd1:"Dekoracje, przechowywanie, oświetlenie, świece, dyfuzory, tekstylia domowe — idealne dla concept store.",
+  ct2:"Elektronika & Gadżety",cd2:"Ładowarki, akcesoria do smartfonów, głośniki, urządzenia połączone, modowe małe AGD.",
+  ct3:"Uroda & Wellness",cd3:"Pielęgnacja twarzy, masażery, dyfuzory olejków eterycznych, akcesoria do urody — ścisłe normy UE.",
+  ct4:"Tekstylia & Moda",cd4:"Odzież, akcesoria, torby, szaliki — możliwość personalizacji logo na zamówienie.",
+  ct5:"Leisure & Dzieci",cd5:"Zabawki, gry edukacyjne, sport, outdoor — certyfikat EN71, zgodność z normami bezpieczeństwa UE.",
+  ct6:"Kuchnia & Stół",cd6:"Przybory, słoiki, akcesoria kuchenne, zastawy — certyfikat LFGB do kontaktu z żywnością.",
+  ct7:"Eko-odpowiedzialność",cd7:"Produkty trwałe, zero waste, naturalne materiały — silny trend europejski, wysokie marże.",
+  ct8:"Na zamówienie",cd8:"Produkt spoza listy? Skontaktuj się z nami — nasza sieć obejmuje prawie wszystkie kategorie.",ctag8:"Oferta 24h",
+  proclbl:"Nasz proces",proch2:"Od Twojego zapytania<br>do Twoich drzwi",
+  ps1:"Twoje zapytanie",pd1:"Opisz produkt, szacowaną ilość i budżet. Bez zobowiązań.",
+  ps2:"Sourcing",pd2:"Wybór najlepszych producentów, negocjacja cen, oferta w 24h.",
+  ps3:"Kontrola jakości",pd3:"Pełna inspekcja przed wysyłką. Certyfikaty i zgodność CE zweryfikowane.",
+  ps4:"Wysyłka",pd4:"Transport i odprawa celna w Polsce zarządzane od A do Z.",
+  ps5:"Dostawa EU",pd5:"Dostawa na Twój adres w dowolnym z 27 krajów UE.",
+  g1t:"Gwarancja zgodności CE",g1d:"Wymagane certyfikaty europejskie dostarczone według kategorii produktu.",
+  g2t:"100% wymiana",g2d:"Wada stwierdzona przy dostawie? Pełna wymiana lub zwrot pieniędzy.",
+  g3t:"Zdjęcia HD w zestawie",g3d:"Zdjęcia wysokiej rozdzielczości i gotowe do użycia karty produktów w zestawie.",
+  g4t:"Długoterminowe partnerstwo",g4d:"Ceny degresywne wraz z wolumenem. Trwałe i przejrzyste relacje.",
+  contlbl:"Kontakt & Oferta",conth2:"Pracujmy razem",contdesc:"Masz produkt na myśli? Bezpłatna spersonalizowana oferta w ciągu 24 godzin roboczych.",
+  cititle:"Dane kontaktowe",cl1:"Email",cl2:"Telefon / WhatsApp",cl3:"Dyrektor & CEO",cl4:"Zarejestrowana spółka",cl5:"Strefa dostaw",cl6:"Czas odpowiedzi",
+  cv5:"Cała Europa — 27 krajów UE<br>+ UK, Szwajcaria, Norwegia",cv6:"W ciągu 24 godzin roboczych",
+  formhead:"Formularz zapytania ofertowego",
+  fl1:"Imię i Nazwisko",fl2:"Firma",fl3:"Email",fl4:"Telefon",fl5:"Kraj dostawy",fl6:"Kategoria produktów",fl7:"Twoje zapytanie",
+  ph_name:"Jan Kowalski",ph_company:"Mój Sklep Sp. z o.o.",ph_email:"kontakt@mojsklep.pl",ph_phone:"+48 XXX XXX XXX",ph_msg:"Opisz szukany produkt, szacowaną ilość, docelowy budżet...",
+  fopt0:"Wybierz...",country:["Belgia","Francja","Holandia","Luksemburg","Niemcy","Inny kraj UE"],
+  foptc0:"Wybierz...",cat:["Dom & Lifestyle","Elektronika & Gadżety","Uroda & Wellness","Tekstylia & Moda","Leisure & Dzieci","Kuchnia & Stół","Inne"],
+  btnsend:"Wyślij zapytanie ofertowe →",sending:"Wysyłanie...",confirm:"✓ Zapytanie wysłane — otrzymasz odpowiedź w ciągu 24 godzin roboczych.",
+  fnote:"Bezpłatna oferta · Bez zobowiązań · Odpowiedź w 24h",
+  ftag1:"Nawigacja",ftag2:"Kontakt",fn1:"Dlaczego my",fn2:"Nasze produkty",fn3:"Nasz proces",fn4:"Kontakt & Oferta",
+  ftagline:"Certyfikowany importer bezpośredni między Chinami a Europą. Kontrola jakości od A do Z. Dostawa do 27 krajów UE.",
+  fcopy1:"© 2026 UNIOTRADE SP. Z O.O. · Wszelkie prawa zastrzeżone",fcopy2:"KRS 0001113345 · Polska · Unia Europejska",
+  title:"UNIOTRADE — Bezpośredni Importer Chiny · Europa"
+}
+};
+
+/* ═══════════════════════════════════════════
+   HELPERS
+═══════════════════════════════════════════ */
+function $t(id,v){ const e=document.getElementById(id); if(e) e.textContent=v; }
+function $h(id,v){ const e=document.getElementById(id); if(e) e.innerHTML=v; }
+function $p(id,v){ const e=document.getElementById(id); if(e) e.placeholder=v; }
+function setSelectOptions(id, placeholder, opts){
+  const el=document.getElementById(id); if(!el) return;
+  el.innerHTML='<option value="">'+placeholder+'</option>';
+  opts.forEach(o=>{ const op=document.createElement('option'); op.textContent=o; el.appendChild(op); });
+}
+function setLabelWithReq(id, text, showReq){
+  const el=document.getElementById(id); if(!el) return;
+  el.innerHTML=text+(showReq?' <span class="field-req">*</span>':'');
+}
+
+/* ═══════════════════════════════════════════
+   SET LANGUAGE
+═══════════════════════════════════════════ */
+let currentLang='fr';
+function setLang(lang){
+  currentLang=lang;
+  const t=T[lang];
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===lang));
+  document.documentElement.lang=lang;
+  document.title=t.title;
+  // topbar
+  $t('t-topbar',t.topbar);
+  // nav
+  $t('t-nav1',t.nav1);$t('t-nav2',t.nav2);$t('t-nav3',t.nav3);$t('t-nav4',t.nav4);$t('t-nav-cta',t.navcta);
+  $t('t-mnav1',t.mnav1);$t('t-mnav2',t.mnav2);$t('t-mnav3',t.mnav3);$t('t-mnav4',t.mnav4);
+  // hero
+  $t('t-badge',t.badge);
+  $h('t-h1',t.h1);
+  $t('t-hero-p',t.herop);
+  $t('t-btn1',t.btn1);$t('t-btn2',t.btn2);
+  $t('t-c1',t.c1);$t('t-c2',t.c2);$t('t-c3',t.c3);
+  $t('t-card-head',t.cardhead);
+  $t('t-s1',t.s1);$t('t-s2',t.s2);$t('t-s3',t.s3);$t('t-s4',t.s4);
+  document.querySelectorAll('.avail-text').forEach(e=>e.textContent=t.avail);
+  $t('t-card-btn',t.cardbtn);
+  $t('t-cert-lbl',t.certlbl);
+  // why
+  $t('t-why-lbl',t.whylbl);$h('t-why-h2',t.whyh2);$t('t-why-desc',t.whydesc);
+  for(let i=1;i<=5;i++){$t('t-wt'+i,t['wt'+i]);$t('t-wp'+i,t['wp'+i]);}
+  $t('t-pt',t.pt);$t('t-ps',t.ps);
+  $t('t-m1',t.m1);$t('t-m2',t.m2);$t('t-m3',t.m3);$t('t-m4',t.m4);$t('t-m5',t.m5);$t('t-m6',t.m6);
+  $t('t-pnote',t.pnote);$t('t-pbtn',t.pbtn);
+  // categories
+  $t('t-cat-lbl',t.catlbl);$h('t-cat-h2',t.cath2);$t('t-cat-desc',t.catdesc);
+  for(let i=1;i<=8;i++){$t('t-ct'+i,t['ct'+i]);$t('t-cd'+i,t['cd'+i]);}
+  $t('t-ctag8',t.ctag8);
+  // process
+  $t('t-proc-lbl',t.proclbl);$h('t-proc-h2',t.proch2);
+  for(let i=1;i<=5;i++){$t('t-ps'+i,t['ps'+i]);$t('t-pd'+i,t['pd'+i]);}
+  // guarantees
+  for(let i=1;i<=4;i++){$t('t-g'+i+'t',t['g'+i+'t']);$t('t-g'+i+'d',t['g'+i+'d']);}
+  // contact
+  $t('t-cont-lbl',t.contlbl);$h('t-cont-h2',t.conth2);$t('t-cont-desc',t.contdesc);
+  $t('t-ci-title',t.cititle);
+  $t('t-cl1',t.cl1);$t('t-cl2',t.cl2);$t('t-cl3',t.cl3);$t('t-cl4',t.cl4);$t('t-cl5',t.cl5);$t('t-cl6',t.cl6);
+  $h('t-cv5',t.cv5);$t('t-cv6',t.cv6);
+  $t('t-form-head',t.formhead);
+  setLabelWithReq('t-fl1',t.fl1,true);
+  setLabelWithReq('t-fl2',t.fl2,false);
+  setLabelWithReq('t-fl3',t.fl3,true);
+  setLabelWithReq('t-fl4',t.fl4,false);
+  setLabelWithReq('t-fl5',t.fl5,false);
+  setLabelWithReq('t-fl6',t.fl6,false);
+  setLabelWithReq('t-fl7',t.fl7,true);
+  $p('inp-name',t.ph_name);$p('inp-company',t.ph_company);$p('inp-email',t.ph_email);$p('inp-phone',t.ph_phone);$p('inp-message',t.ph_msg);
+  setSelectOptions('sel-country',t.fopt0,t.country);
+  setSelectOptions('sel-cat',t.foptc0,t.cat);
+  const btn=document.getElementById('btn-submit');
+  if(btn && !btn.disabled) btn.textContent=t.btnsend;
+  $t('t-fnote',t.fnote);
+  // footer
+  $t('t-ftag1',t.ftag1);$t('t-ftag2',t.ftag2);
+  $t('t-fn1',t.fn1);$t('t-fn2',t.fn2);$t('t-fn3',t.fn3);$t('t-fn4',t.fn4);
+  $t('t-ftagline',t.ftagline);
+  $t('t-fcopy1',t.fcopy1);$t('t-fcopy2',t.fcopy2);
+}
+
+
+/* ═══════════════════════════════════════════
+   FORM SUBMIT - Web3Forms
+═══════════════════════════════════════════ */
+function submitForm(){
+  var btn = document.getElementById('btn-submit');
+  var t   = T[currentLang];
+
+  var name      = document.getElementById('inp-name').value.trim();
+  var email     = document.getElementById('inp-email').value.trim();
+  var message   = document.getElementById('inp-message').value.trim();
+  var societe   = document.getElementById('inp-company').value.trim();
+  var telephone = document.getElementById('inp-phone').value.trim();
+  var pays      = document.getElementById('sel-country').value;
+  var categorie = document.getElementById('sel-cat').value;
+
+  if(!name || !email || !message){
+    alert('Merci de remplir : Nom, Email et Demande.');
+    return;
+  }
+
+  btn.textContent = t.sending;
+  btn.disabled    = true;
+  btn.style.opacity = '0.6';
+
+  var fullMessage =
+    'Nom : '       + name      + '\n' +
+    'Email : '     + email     + '\n' +
+    (telephone ? 'Telephone : ' + telephone + '\n' : '') +
+    (societe   ? 'Societe : '   + societe   + '\n' : '') +
+    (pays      ? 'Pays : '      + pays      + '\n' : '') +
+    (categorie ? 'Categorie : ' + categorie + '\n' : '') +
+    '\nDemande :\n' + message;
+
+  var fd = new FormData();
+  fd.append('access_key', 'cf1ea2db-5d24-4ee4-aee3-21295b2903dd');
+  fd.append('subject',    'Demande UNIOTRADE - ' + name + (telephone ? ' | Tel: ' + telephone : ''));
+  fd.append('from_name',  name);
+  fd.append('replyto',    email);
+  fd.append('message',    fullMessage);
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: fd
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if(data.success){
+      btn.style.display = 'none';
+      var c = document.getElementById('form-confirm');
+      c.textContent = t.confirm;
+      c.style.display = 'block';
+    } else {
+      throw new Error(data.message || 'Erreur');
+    }
+  })
+  .catch(function(err){
+    console.error('Web3Forms error:', err);
+    btn.textContent  = t.btnsend;
+    btn.disabled     = false;
+    btn.style.opacity = '1';
+    alert('Erreur envoi. Contactez-nous : uniotrade.contact@gmail.com');
+  });
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE NAV
+═══════════════════════════════════════════ */
+function toggleMobileNav(){
+  document.getElementById('mobile-nav').classList.toggle('open');
+}
+function closeMobileNav(){
+  document.getElementById('mobile-nav').classList.remove('open');
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL EFFECTS
+═══════════════════════════════════════════ */
+window.addEventListener('scroll', function(){
+  var nav = document.getElementById('main-nav');
+  if(nav) nav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e, i){
+    if(e.isIntersecting){
+      setTimeout(function(){ e.target.classList.add('visible'); }, i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08, rootMargin: '0px 0px -40px 0px'});
+reveals.forEach(function(el){ io.observe(el); });
+
+setLang('fr');
+</script>
+</body>
+</html>
